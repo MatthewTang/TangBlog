@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(215, 20%, 14%);
+  --muted: hsl(214, 13%, 97%);
+  --muted-foreground: hsl(215, 12%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(215, 20%, 14%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(215, 20%, 14%);
+  --border: hsl(214, 13%, 91%);
+  --input: hsl(214, 13%, 91%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(210, 100%, 98%);
+  --secondary: hsl(214, 13%, 97%);
+  --secondary-foreground: hsl(215, 19%, 35%);
+  --accent: hsl(214, 13%, 97%);
+  --accent-foreground: hsl(215, 19%, 35%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(60, 9%, 98%);
+  --ring: hsl(215, 20%, 14%);
+  --radius: 0.75rem;
+  
+  /* Brand colors */
+  --brand-blue: hsl(217, 91%, 60%);
+  --brand-slate: hsl(215, 16%, 47%);
+  --brand-emerald: hsl(160, 84%, 39%);
+}
+
+.dark {
+  --background: hsl(215, 28%, 17%);
+  --foreground: hsl(213, 31%, 91%);
+  --muted: hsl(217, 33%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(215, 28%, 17%);
+  --popover-foreground: hsl(213, 31%, 91%);
+  --card: hsl(215, 28%, 17%);
+  --card-foreground: hsl(213, 31%, 91%);
+  --border: hsl(217, 33%, 17%);
+  --input: hsl(217, 33%, 17%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(210, 100%, 98%);
+  --secondary: hsl(217, 33%, 17%);
+  --secondary-foreground: hsl(213, 31%, 91%);
+  --accent: hsl(217, 33%, 17%);
+  --accent-foreground: hsl(213, 31%, 91%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(213, 31%, 91%);
+  --ring: hsl(217, 91%, 60%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-inter antialiased bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  .prose-content {
+    @apply text-muted-foreground leading-relaxed;
+  }
+  
+  .prose-content h1, .prose-content h2, .prose-content h3 {
+    @apply text-foreground font-semibold mt-8 mb-4;
+  }
+  
+  .prose-content p {
+    @apply mb-4;
+  }
+  
+  .prose-content ul, .prose-content ol {
+    @apply mb-4 pl-6;
+  }
+  
+  .prose-content li {
+    @apply mb-2;
+  }
+  
+  .prose-content code {
+    @apply bg-muted px-2 py-1 rounded text-sm;
+  }
+  
+  .prose-content pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto;
+  }
+}
