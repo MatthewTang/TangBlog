@@ -1,6 +1,6 @@
 # Overview
 
-This is a full-stack personal portfolio website for Matthew Tang, a software engineer. The application features a modern React frontend with Tailwind CSS styling and a Node.js/Express backend with PostgreSQL database integration. The portfolio showcases Matthew's professional background, skills, projects, and blog posts about software engineering topics including blockchain, mobile development, and testing.
+This is a full-stack personal portfolio website for Matthew Tang, a software engineer. The application features a modern React frontend with Tailwind CSS styling and a Node.js/Express backend that serves blog posts from markdown files. The portfolio showcases Matthew's professional background, skills, projects, and blog posts about software engineering topics including blockchain, mobile development, and testing. The website design is based on the provided screenshot and implements Gatsby-like functionality for markdown blog posts.
 
 # User Preferences
 
@@ -19,10 +19,10 @@ Preferred communication style: Simple, everyday language.
 ## Backend Architecture
 - **Runtime**: Node.js with Express.js framework
 - **Language**: TypeScript with ES modules
-- **Database ORM**: Drizzle ORM for type-safe database operations
-- **Database Schema**: PostgreSQL with user authentication schema
+- **Blog System**: Markdown file parser with frontmatter support
+- **API Endpoints**: RESTful API for serving blog posts from markdown files
+- **File System**: Direct file system access for reading markdown content
 - **Storage Interface**: Abstracted storage layer with memory and database implementations
-- **Session Management**: Express sessions with PostgreSQL store
 
 ## Data Storage Solutions
 - **Primary Database**: PostgreSQL with Neon serverless database
