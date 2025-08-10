@@ -16,8 +16,8 @@ export default function Navigation() {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/matthewtang", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/matthewtang", label: "LinkedIn" },
     { icon: Mail, href: "mailto:matthew.tang@connect.hku.hk", label: "Email" }
   ];
 
