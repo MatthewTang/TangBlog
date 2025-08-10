@@ -62,6 +62,8 @@ export default function Navigation() {
               <a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center transition-colors"
                 aria-label={social.label}
               >
@@ -94,6 +96,8 @@ export default function Navigation() {
                       <a
                         key={social.label}
                         href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center transition-colors"
                         aria-label={social.label}
                       >
