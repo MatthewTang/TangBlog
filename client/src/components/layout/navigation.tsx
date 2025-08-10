@@ -18,7 +18,7 @@ export default function Navigation() {
   const socialLinks = [
     { icon: Github, href: "https://github.com/matthewtang", label: "GitHub" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/matthew-tang-siu-hin/", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:matthew.tang@connect.hku.hk", label: "Email" }
+    { icon: Mail, href: "mailto:hello@matthewtang.xyz", label: "Email" }
   ];
 
   const handleNavClick = (href: string) => {
