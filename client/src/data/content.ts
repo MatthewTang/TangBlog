@@ -47,7 +47,7 @@ export const projects = [
 ];
 
 export const contactInfo = {
-  email: "matthew.tang@connect.hku.hk",
+  email: "hello@matthewtang.xyz",
   phone: "(852) 66750566", 
   location: "Hong Kong"
 };
