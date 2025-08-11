@@ -2,7 +2,7 @@
 
 TangBlog is a full-stack TypeScript portfolio and blog website for Matthew Tang, a software engineer. The application features a modern React frontend with Tailwind CSS styling and a Node.js/Express backend that serves blog posts from markdown files.
 
-Always reference these instructions first and fallback to search or bash commands only when you encounter unexpected information that does not match the info here.
+Always reference these instructions first and fall back to search or bash commands only when you encounter unexpected information that does not match the info here.
 
 ## Working Effectively
 
