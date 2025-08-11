@@ -7,7 +7,7 @@ Always reference these instructions first and fall back to search or bash comman
 ## Working Effectively
 
 ### Bootstrap and Development Setup
-- Install dependencies: `npm install` -- takes 24 seconds, some peer dependency warnings are normal and can be ignored
+- Install dependencies: `npm install` -- typically completes in under a minute; some peer dependency warnings are normal and can be ignored
 - Type check the codebase: `npm run check` -- takes 6 seconds
 - Start development server: `npm run dev` -- starts immediately, serves on port 5000
 - Build for production: `npm run build` -- takes 4 seconds, builds both frontend and backend
