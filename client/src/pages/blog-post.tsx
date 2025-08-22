@@ -5,20 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import Navigation from "@/components/layout/navigation";
 import Footer from "@/components/layout/footer";
+import { getPostBySlug } from "@/lib/blog";
 
 export default function BlogPost() {
   const { slug } = useParams();
   
   const { data: post, isLoading } = useQuery({
-    queryKey: ['/api/blog', slug],
-    queryFn: async () => {
-      if (!slug) return null;
-      const response = await fetch(`/api/blog/${slug}`);
-      if (!response.ok) {
-        return null;
-      }
-      return response.json();
-    },
+    queryKey: ['blog-post', slug],
+    queryFn: () => (slug ? getPostBySlug(slug) : Promise.resolve(undefined)),
     enabled: !!slug
   });
 
