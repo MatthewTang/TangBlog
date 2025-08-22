@@ -1,20 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
+import { getRecentPosts } from "@/lib/blog";
 
 export default function Blog() {
-  const { data: posts = [], isLoading } = useQuery({
-    queryKey: ['/api/blog'],
-    queryFn: async () => {
-      const response = await fetch('/api/blog');
-      if (!response.ok) {
-        throw new Error('Failed to fetch blog posts');
-      }
-      return response.json();
-    }
+  const { data: recentPosts = [], isLoading } = useQuery({
+    queryKey: ['recent-posts'],
+    queryFn: () => getRecentPosts(3)
   });
-
-  const recentPosts = posts.slice(0, 3);
 
   if (isLoading) {
     return (
