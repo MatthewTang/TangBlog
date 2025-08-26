@@ -2,12 +2,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { getRecentPosts } from "@/lib/blog";
+import { trackEvent } from "@/lib/posthog";
 
 export default function Blog() {
   const { data: recentPosts = [], isLoading } = useQuery({
     queryKey: ['recent-posts'],
     queryFn: () => getRecentPosts(3)
   });
+
+  const handleBlogClick = (post: any, source: 'title' | 'read_more') => {
+    trackEvent('blog_link_clicked', {
+      slug: post.slug,
+      title: post.title,
+      source,
+      location: 'home_page'
+    });
+  };
 
   if (isLoading) {
     return (
@@ -58,6 +68,7 @@ export default function Blog() {
                   <Link 
                     href={`/blog/${post.slug}`}
                     className="hover:text-blue-600 transition-colors"
+                    onClick={() => handleBlogClick(post, 'title')}
                   >
                     {post.title}
                   </Link>
@@ -68,6 +79,7 @@ export default function Blog() {
                 <Link 
                   href={`/blog/${post.slug}`}
                   className="text-blue-600 hover:text-blue-700 font-medium"
+                  onClick={() => handleBlogClick(post, 'read_more')}
                 >
                   Read more →
                 </Link>

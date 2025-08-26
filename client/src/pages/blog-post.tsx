@@ -3,9 +3,11 @@ import { ArrowLeft, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 import Navigation from "@/components/layout/navigation";
 import Footer from "@/components/layout/footer";
 import { getPostBySlug } from "@/lib/blog";
+import { trackEvent } from "@/lib/posthog";
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -15,6 +17,18 @@ export default function BlogPost() {
     queryFn: () => (slug ? getPostBySlug(slug) : Promise.resolve(undefined)),
     enabled: !!slug
   });
+
+  // Track blog post view when post is loaded
+  useEffect(() => {
+    if (post && slug) {
+      trackEvent('blog_post_viewed', {
+        slug,
+        title: post.title,
+        date: post.date,
+        tags: post.tags,
+      });
+    }
+  }, [post, slug]);
 
   if (isLoading) {
     return (
