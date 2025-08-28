@@ -18,21 +18,21 @@ export default function BlogPost() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-slate-50">
+      <div className="min-h-screen bg-background">
         <Navigation />
         <main className="py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="animate-pulse">
-              <div className="h-10 bg-slate-200 rounded mb-6 w-32"></div>
-              <div className="h-4 bg-slate-200 rounded mb-4 w-24"></div>
-              <div className="h-12 bg-slate-200 rounded mb-6"></div>
-              <div className="h-6 bg-slate-200 rounded mb-8"></div>
+              <div className="h-10 bg-muted rounded mb-6 w-32"></div>
+              <div className="h-4 bg-muted rounded mb-4 w-24"></div>
+              <div className="h-12 bg-muted rounded mb-6"></div>
+              <div className="h-6 bg-muted rounded mb-8"></div>
               <Card>
                 <CardContent className="p-8">
                   <div className="space-y-4">
-                    <div className="h-4 bg-slate-200 rounded"></div>
-                    <div className="h-4 bg-slate-200 rounded"></div>
-                    <div className="h-4 bg-slate-200 rounded w-3/4"></div>
+                    <div className="h-4 bg-muted rounded"></div>
+                    <div className="h-4 bg-muted rounded"></div>
+                    <div className="h-4 bg-muted rounded w-3/4"></div>
                   </div>
                 </CardContent>
               </Card>
@@ -46,16 +46,16 @@ export default function BlogPost() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-slate-50">
+      <div className="min-h-screen bg-background">
         <Navigation />
         <main className="py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <Card>
               <CardContent className="p-8 text-center">
-                <h1 className="text-2xl font-bold text-slate-800 mb-4">
+                <h1 className="text-2xl font-bold text-foreground mb-4">
                   Blog post not found
                 </h1>
-                <p className="text-slate-600 mb-6">
+                <p className="text-muted-foreground mb-6">
                   The blog post you're looking for doesn't exist.
                 </p>
                 <Link href="/">
@@ -74,7 +74,7 @@ export default function BlogPost() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-background">
       <Navigation />
       <main className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,16 +86,16 @@ export default function BlogPost() {
               </Button>
             </Link>
             
-            <div className="flex items-center gap-2 text-slate-500 mb-4">
+            <div className="flex items-center gap-2 text-muted-foreground mb-4">
               <Calendar className="w-4 h-4" />
               <span>{post.date}</span>
             </div>
             
-            <h1 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
+            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
               {post.title}
             </h1>
             
-            <p className="text-xl text-slate-600 leading-relaxed">
+            <p className="text-xl text-muted-foreground leading-relaxed">
               {post.excerpt}
             </p>
           </div>
@@ -107,13 +107,13 @@ export default function BlogPost() {
                 dangerouslySetInnerHTML={{
                   __html: post.content.replace(/\n/g, '<br>').replace(/#{1,3}\s/g, (match: string) => {
                     const level = match.trim().length;
-                    return level === 1 ? '<h1 class="text-3xl font-semibold mt-8 mb-4 text-slate-800">' :
-                           level === 2 ? '<h2 class="text-2xl font-semibold mt-6 mb-3 text-slate-800">' :
-                           '<h3 class="text-xl font-semibold mt-4 mb-2 text-slate-800">';
+                    return level === 1 ? '<h1 class="text-3xl font-semibold mt-8 mb-4 text-foreground">' :
+                           level === 2 ? '<h2 class="text-2xl font-semibold mt-6 mb-3 text-foreground">' :
+                           '<h3 class="text-xl font-semibold mt-4 mb-2 text-foreground">';
                   }).replace(/```[\s\S]*?```/g, (match: string) => {
                     const code = match.slice(3, -3);
-                    return `<pre class="bg-slate-100 p-4 rounded-lg overflow-x-auto my-4"><code>${code}</code></pre>`;
-                  }).replace(/`([^`]+)`/g, '<code class="bg-slate-100 px-2 py-1 rounded text-sm">$1</code>')
+                    return `<pre class="bg-muted p-4 rounded-lg overflow-x-auto my-4"><code>${code}</code></pre>`;
+                  }).replace(/`([^`]+)`/g, '<code class="bg-muted px-2 py-1 rounded text-sm">$1</code>')
                     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
                     .replace(/\*([^*]+)\*/g, '<em>$1</em>')
                     .replace(/^\d+\.\s/gm, '<li>')
