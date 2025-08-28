@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Github, Linkedin, Mail } from "lucide-react";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,12 +33,12 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
+    <nav className="sticky top-0 bg-background/80 backdrop-blur-md border-b border-border z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/">
-              <span className="text-xl font-semibold text-slate-800 hover:text-blue-600 transition-colors">
+              <span className="text-xl font-semibold text-foreground hover:text-primary transition-colors">
                 Matthew
               </span>
             </Link>
@@ -49,7 +50,7 @@ export default function Navigation() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="text-slate-600 hover:text-blue-600 transition-colors font-medium"
+                className="text-muted-foreground hover:text-primary transition-colors font-medium"
               >
                 {link.label}
               </button>
@@ -57,17 +58,18 @@ export default function Navigation() {
           </div>
 
           {/* Social Links */}
-          <div className="hidden md:flex space-x-3">
+          <div className="hidden md:flex items-center space-x-3">
+            <ModeToggle />
             {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center transition-colors"
+                className="w-8 h-8 bg-muted hover:bg-muted/80 rounded-full flex items-center justify-center transition-colors"
                 aria-label={social.label}
               >
-                <social.icon className="w-4 h-4 text-slate-600" />
+                <social.icon className="w-4 h-4 text-muted-foreground" />
               </a>
             ))}
           </div>
@@ -86,22 +88,25 @@ export default function Navigation() {
                     <button
                       key={link.href}
                       onClick={() => handleNavClick(link.href)}
-                      className="text-lg text-slate-600 hover:text-blue-600 transition-colors text-left"
+                      className="text-lg text-muted-foreground hover:text-primary transition-colors text-left"
                     >
                       {link.label}
                     </button>
                   ))}
-                  <div className="flex space-x-4 pt-6 border-t">
+                  <div className="flex justify-center">
+                    <ModeToggle />
+                  </div>
+                  <div className="flex space-x-4 pt-6 border-t border-border">
                     {socialLinks.map((social) => (
                       <a
                         key={social.label}
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center transition-colors"
+                        className="w-10 h-10 bg-muted hover:bg-muted/80 rounded-full flex items-center justify-center transition-colors"
                         aria-label={social.label}
                       >
-                        <social.icon className="w-5 h-5 text-slate-600" />
+                        <social.icon className="w-5 h-5 text-muted-foreground" />
                       </a>
                     ))}
                   </div>

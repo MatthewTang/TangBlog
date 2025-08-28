@@ -8,32 +8,32 @@ export default function Contact() {
       title: "Email",
       value: contactInfo.email,
       href: `mailto:${contactInfo.email}`,
-      color: "text-blue-600",
-      bgColor: "bg-blue-100"
+      color: "text-blue-600 dark:text-blue-300",
+      bgColor: "bg-blue-100 dark:bg-blue-900",
     },
     {
       icon: Phone,
-      title: "Phone", 
+      title: "Phone",
       value: contactInfo.phone,
       href: `tel:+85266750566`,
-      color: "text-emerald-600",
-      bgColor: "bg-emerald-100"
+      color: "text-emerald-600 dark:text-emerald-300",
+      bgColor: "bg-emerald-100 dark:bg-emerald-900",
     },
     {
       icon: MapPin,
       title: "Address",
       value: contactInfo.location,
       href: null,
-      color: "text-slate-600",
-      bgColor: "bg-slate-100"
+      color: "text-muted-foreground",
+      bgColor: "bg-muted"
     }
   ];
 
   return (
-    <section id="contact" className="py-16 bg-white">
+    <section id="contact" className="py-16 bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
             Contacts
           </h2>
         </div>
@@ -44,18 +44,18 @@ export default function Contact() {
               <div className={`w-16 h-16 ${item.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
                 <item.icon className={`w-6 h-6 ${item.color}`} />
               </div>
-              <h3 className="text-lg font-semibold text-slate-800 mb-2">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
                 {item.title}
               </h3>
               {item.href ? (
-                <a 
+                <a
                   href={item.href}
                   className={`${item.color} hover:opacity-70 transition-opacity`}
                 >
                   {item.value}
                 </a>
               ) : (
-                <span className="text-slate-600">{item.value}</span>
+                <span className="text-muted-foreground">{item.value}</span>
               )}
             </div>
           ))}

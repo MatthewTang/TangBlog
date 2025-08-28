@@ -21,21 +21,21 @@ export default function Hero() {
             />
           </div>
           <div className="flex-1 text-center lg:text-left">
-            <h1 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
+            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
               {profileData.name}
             </h1>
-            <p className="text-xl lg:text-2xl text-slate-600 mb-6">
+            <p className="text-xl lg:text-2xl text-muted-foreground mb-6">
               {profileData.title}
             </p>
-            <p className="text-lg lg:text-xl text-slate-700 mb-8 font-medium">
+            <p className="text-lg lg:text-xl text-foreground mb-8 font-medium">
               {profileData.tagline}
             </p>
-            <p className="text-base lg:text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-base lg:text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl">
               {profileData.bio}
             </p>
-            <Button 
+            <Button
               onClick={handleContactClick}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-medium shadow-lg"
+              className="px-8 py-3 text-lg font-medium shadow-lg"
             >
               Contacts
             </Button>
