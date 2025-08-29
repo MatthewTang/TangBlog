@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
-import { getRecentPosts } from "@/lib/blog";
+import { getRecentPosts, type BlogPost } from "@/lib/blog";
 import { trackEvent } from "@/lib/posthog";
 
 export default function Blog() {
@@ -10,7 +10,7 @@ export default function Blog() {
     queryFn: () => getRecentPosts(3)
   });
 
-  const handleBlogClick = (post: any, source: 'title' | 'read_more') => {
+  const handleBlogClick = (post: BlogPost, source: 'title' | 'read_more') => {
     trackEvent('blog_link_clicked', {
       slug: post.slug,
       title: post.title,
@@ -58,7 +58,7 @@ export default function Blog() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {recentPosts.map((post: any) => (
+          {recentPosts.map((post: BlogPost) => (
             <Card key={post.slug} className="bg-white border-0 hover:shadow-lg transition-shadow">
               <CardContent className="p-8">
                 <div className="flex items-center gap-2 text-sm text-slate-500 mb-4">
