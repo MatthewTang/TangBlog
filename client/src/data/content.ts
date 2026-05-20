@@ -3,7 +3,7 @@ export const profileData = {
   title: "Software Engineer",
   tagline: "Innovating with code and insight.",
   bio: "I enjoy building software that mixes tech and psychology, with a focus on blockchain and mobile apps. Always learning, always creating.",
-  profileImage: "/attached_assets/image_1754819404274.png",
+  profileImage: "/attached_assets/profile_picture_linkedin.png",
   biography: {
     paragraph1: "I like crafting software that works smoothly, drawing from my computer science and psychology background. I've worked on blockchain and mobile projects, and I'm always up for tackling new challenges with a fresh perspective.",
     paragraph2: "With a knack for problem-solving, I like tackling new challenges, whether it's optimizing code or exploring user-friendly designs, all while keeping things fresh and approachable."
